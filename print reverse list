@@ -1,0 +1,7 @@
+void print_reverse_list(Node head)
+    {
+        if(head == null)
+            return;
+        print_reverse_list(head.next);
+        System.out.print(head.data);
+    }

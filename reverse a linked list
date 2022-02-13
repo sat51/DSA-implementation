@@ -1,0 +1,24 @@
+public Node reverse_list(Node head)
+    {
+        if(head == null)
+        {
+            System.out.println("invalid action");
+            return null;
+        }
+        if(head.next == null)
+        {
+            System.out.println("only one element present");
+            return head;
+        }
+        Node prenode = null;
+        Node currentnode = head;
+        while(currentnode!=null)
+        {
+            Node nextnode = currentnode.next;
+            currentnode.next = prenode;
+            prenode = currentnode;
+            currentnode = nextnode;
+        }
+        head = currentnode;
+        return head;
+    }

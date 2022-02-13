@@ -1,0 +1,26 @@
+class Solution
+{
+    //Function to reverse a linked list.
+    Node reverseList(Node head)
+    {
+        if(head==null)
+        {
+            return null;
+        }
+        if(head.next == null)
+        {
+            return head;
+        }
+        Node prenode = null;
+        Node currentNode = head;
+        while(currentNode!=null)
+        {
+            Node nextNode = currentNode.next;
+            currentNode.next = prenode;
+            prenode = currentNode;
+            currentNode = nextNode;
+        }
+        head = prenode;
+        return head;
+    }
+}

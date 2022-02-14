@@ -1,0 +1,53 @@
+public class Stack_Using_Array                                
+{                                                             
+    static class mystack                                      
+    {                                                         
+        int a[];                                              
+        int top;                                              
+        int capacity;                                         
+        mystack(int capacity)                                 
+        {                                                     
+            this.capacity = capacity;                         
+            top = -1;                                         
+            a = new int [capacity];                           
+        }                                                     
+        public void push(int data) throws Exception           
+        {                                                     
+            if(top == capacity-1)                             
+            {                                                 
+                throw new Exception("overflow");              
+            }                                                 
+            top++;                                            
+            a[top] = data;                                    
+        }                                                     
+        public int  pop() throws Exception                    
+        {                                                     
+            if(top == -1)                                     
+            {                                                 
+                throw new Exception("underflow");             
+            }                                                 
+            int res = a[top];                                 
+            top--;                                            
+            return res;                                       
+        }                                                     
+        public int peek() throws Exception                    
+        {                                                     
+            if(top == -1)                                     
+            {                                                 
+                throw new Exception("underflow");             
+            }                                                 
+            return top;                                       
+        }                                                     
+        public boolean isEmpty()                              
+        {                                                     
+            return top == -1;                                 
+        }                                                     
+    }                                                         
+    public static void main(String[] args) throws Exception { 
+        mystack    a = new mystack(5);                        
+        a.push(1);                                            
+                                                              
+    }                                                         
+                                                              
+                                                              
+}                                                             

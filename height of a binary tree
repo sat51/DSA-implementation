@@ -1,0 +1,19 @@
+public class Height {
+    static class Node
+    {
+        int data;
+        Node left,right;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    int height(Node root)
+    {
+        if(root == null)
+        {
+            return 0;
+        }
+        return Math.max(height(root.left),height(root.right))+1;
+    }
+}

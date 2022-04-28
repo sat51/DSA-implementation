@@ -1,0 +1,23 @@
+void PrintLeftViewUtil(Node root,ArrayList,int level)
+    {
+        if(root==null)
+        {
+            return;
+        }
+        if(list.get(level)==null)
+        {
+            list.add(root);
+        }
+        PrintLeftViewUtil(root.left,list,level+1);
+        PrintLeftViewUtil(root.right,list,level+1);
+        
+    }
+    void PrintLeftView(Node root)
+    {
+        ArrayList<Node> list = new ArrayList<>();
+        PrintLeftView(root,list,0);
+        for (Node curr:list) {
+            System.out.println(curr.data+" ");
+            
+        }
+    }
